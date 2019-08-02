@@ -6,12 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 //comment the above line and uncomment below line to use Chrome
 //import org.openqa.selenium.chrome.ChromeDriver;
-public class PG6ExplicitWait {
+public class PG05SwitchingToPopUp {
 
 
     public static void main(String[] args) {
@@ -24,12 +21,16 @@ public class PG6ExplicitWait {
     			capabilities.setCapability("marionette", true);
     			@SuppressWarnings("deprecation")
 				WebDriver driver = new FirefoxDriver(capabilities);
+    			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     			
-    			driver.get("https://www.facebook.com");
-    			WebDriverWait myWaitVar = new WebDriverWait(driver, 1);
-    			myWaitVar.until(ExpectedConditions.visibilityOfElementLocated(By.name("firstname")));
-    			driver.findElement(By.name("firstname")).sendKeys("bobo");
+    			String alertMessage;
     			
+    			driver.get("http://jsbin.com/usidix/1");
+    	        driver.findElement(By.cssSelector("input[value=\"Go!\"]")).click();
+    	        alertMessage = driver.switchTo().alert().getText();
+    	        driver.switchTo().alert().accept();
+    	       
+    	        System.out.println(alertMessage);
     	        driver.quit(); 
     			
        

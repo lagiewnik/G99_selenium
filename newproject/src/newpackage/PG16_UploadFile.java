@@ -2,21 +2,14 @@
 
 package newpackage;
 
-import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
+import java.io.IOException;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 //comment the above line and uncomment below line to use Chrome
 //import org.openqa.selenium.chrome.ChromeDriver;
 public class PG16_UploadFile {
@@ -47,7 +40,32 @@ public class PG16_UploadFile {
 
     	        // click the "UploadFile" button
     	        driver.findElement(By.name("send")).click();
-       
+    	        
+    	        /* ====================
+    	         * Download file with external program wget
+    	         */
+    	        url = "http://demo.guru99.com/test/yahoo.html";
+    	        driver.get(url);
+    	        
+    	        //Find button with download
+    	        WebElement downloadBtn = driver.findElement(By.id("messenger-download"));
+    	        //get url for download from href attribute of download button
+    	        String sourceLocation = downloadBtn.getAttribute("href");
+    	        System.out.println(sourceLocation);
+    	        //Setup command syntax for wget
+    	        String wget_command = "cmd /c wget -P x: " + sourceLocation;
+    	        System.out.println(wget_command);
+    	        //initialize download by calling wget
+    	        try {
+    	        	Process exec = Runtime.getRuntime().exec(wget_command);
+    	        	int exitVal = exec.waitFor();
+    	        	System.out.println("Exit value: " + exitVal);
+    	        }
+    	        catch (InterruptedException | IOException ex) {
+    	        	System.out.println(ex.toString());
+    	        }
+    	        
+    	        driver.quit();
     }
 
 }

@@ -1,11 +1,9 @@
 package newpackage;
 
-import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -13,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //comment the above line and uncomment below line to use Chrome
 //import org.openqa.selenium.chrome.ChromeDriver;
-public class PG7CatchingExceptions {
+public class PG06ExplicitWait {
 
 
     public static void main(String[] args) {
@@ -28,17 +26,9 @@ public class PG7CatchingExceptions {
 				WebDriver driver = new FirefoxDriver(capabilities);
     			
     			driver.get("https://www.facebook.com");
-    			
-    			WebElement txtbox_username = driver.findElement(By.name("firstname"));
-    			try{
-    			        if(txtbox_username.isEnabled()){
-    			            txtbox_username.sendKeys("tutorial");
-    			        }
-    			    }
-
-    			catch(NoSuchElementException nsee){
-    			            System.out.println(nsee.toString());
-    			 }
+    			WebDriverWait myWaitVar = new WebDriverWait(driver, 1);
+    			myWaitVar.until(ExpectedConditions.visibilityOfElementLocated(By.name("firstname")));
+    			driver.findElement(By.name("firstname")).sendKeys("bobo");
     			
     	        driver.quit(); 
     			

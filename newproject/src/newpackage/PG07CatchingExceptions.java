@@ -1,8 +1,5 @@
-///https://www.guru99.com/find-element-selenium.html
-
 package newpackage;
 
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
@@ -16,7 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //comment the above line and uncomment below line to use Chrome
 //import org.openqa.selenium.chrome.ChromeDriver;
-public class PG8FindElements {
+public class PG07CatchingExceptions {
 
 
     public static void main(String[] args) {
@@ -30,16 +27,18 @@ public class PG8FindElements {
     			@SuppressWarnings("deprecation")
 				WebDriver driver = new FirefoxDriver(capabilities);
     			
-    			driver.get("http://demo.guru99.com/test/ajax.html");
+    			driver.get("https://www.facebook.com");
     			
-    			List<WebElement> elements = driver.findElements(By.tagName("div"));
-    			System.out.println("Number of div: "+ elements.size());
-    			
-    			for (int i=0; i<elements.size(); i++) {
-    				System.out.println("Div id: " + elements.get(i).getAttribute("id"));
-					System.out.println("Div content: " + elements.get(i).getText());
-					System.out.println("================================================");
-    			}
+    			WebElement txtbox_username = driver.findElement(By.name("firstname"));
+    			try{
+    			        if(txtbox_username.isEnabled()){
+    			            txtbox_username.sendKeys("tutorial");
+    			        }
+    			    }
+
+    			catch(NoSuchElementException nsee){
+    			            System.out.println(nsee.toString());
+    			 }
     			
     	        driver.quit(); 
     			

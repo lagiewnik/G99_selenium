@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 //comment the above line and uncomment below line to use Chrome
 //import org.openqa.selenium.chrome.ChromeDriver;
-public class PG5SwitchingToPopUp {
+public class PG04SwitchingBetweenFrames {
 
 
     public static void main(String[] args) {
@@ -23,15 +23,11 @@ public class PG5SwitchingToPopUp {
 				WebDriver driver = new FirefoxDriver(capabilities);
     			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     			
-    			String alertMessage;
-    			
-    			driver.get("http://jsbin.com/usidix/1");
-    	        driver.findElement(By.cssSelector("input[value=\"Go!\"]")).click();
-    	        alertMessage = driver.switchTo().alert().getText();
-    	        driver.switchTo().alert().accept();
-    	       
-    	        System.out.println(alertMessage);
-    	        driver.quit(); 
+    			driver.get("http://demo.guru99.com/selenium/deprecated.html");
+    	        driver.switchTo().frame("classFrame");
+    	        driver.findElement(By.linkText("Deprecated")).click();
+    	        
+    	        //driver.close(); 
     			
        
     }

@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 //comment the above line and uncomment below line to use Chrome
 //import org.openqa.selenium.chrome.ChromeDriver;
-public class PG4SwitchingBetweenFrames {
+public class PG02LocatingGUIElements {
 
 
     public static void main(String[] args) {
@@ -23,12 +23,15 @@ public class PG4SwitchingBetweenFrames {
 				WebDriver driver = new FirefoxDriver(capabilities);
     			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     			
-    			driver.get("http://demo.guru99.com/selenium/deprecated.html");
-    	        driver.switchTo().frame("classFrame");
-    	        driver.findElement(By.linkText("Deprecated")).click();
+    	
+    			String baseUrl = "http://www.facebook.com";
+    	        String tagName = "";
     	        
-    	        //driver.close(); 
-    			
+    	        driver.get(baseUrl);
+    	        tagName = driver.findElement(By.id("email")).getTagName();
+    	        System.out.println(tagName);
+    	        driver.close();
+    	        System.exit(0);
        
     }
 
