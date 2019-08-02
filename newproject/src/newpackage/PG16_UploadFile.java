@@ -1,4 +1,4 @@
-/// https://www.guru99.com/select-option-dropdown-selenium-webdriver.html
+// https://www.guru99.com/upload-download-file-selenium-webdriver.html
 
 package newpackage;
 
@@ -7,17 +7,19 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //comment the above line and uncomment below line to use Chrome
 //import org.openqa.selenium.chrome.ChromeDriver;
-public class PG12_SelectDropDown {
+public class PG16_UploadFile {
 
 
     public static void main(String[] args) {
@@ -30,24 +32,21 @@ public class PG12_SelectDropDown {
     			capabilities.setCapability("marionette", true);
     			@SuppressWarnings("deprecation")
 				WebDriver driver = new FirefoxDriver(capabilities);
+    			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     			
-    			String url = "http://demo.guru99.com/test/newtours/register.php";
+    			String url = "http://demo.guru99.com/test/upload/";
     			driver.get(url);
-    			    		     			
-    		        Select drpCountry = new Select(driver.findElement(By.name("country")));
-    		        drpCountry.selectByVisibleText("POLAND");	
-    	//selecting item in multiple SELECT elements
-    		    
-    		        
-    		    driver.navigate().to("http://jsbin.com/osebed/2");
-    		    Select fruits = new Select(driver.findElement(By.id("fruits")));
-    		    //now selecting BAnana and Apple
-    		    fruits.selectByIndex(0);
-    		    fruits.selectByValue("apple");
-    		    
-    		    
-    		    driver.quit(); 
     			
+    			WebElement uploadElement = driver.findElement(By.id("uploadfile_0"));
+
+    	        // enter the file path onto the file-selection input field
+    	        uploadElement.sendKeys("d:\\tmp\\test.txt");
+
+    	        // check the "I accept the terms of service" check box
+    	        driver.findElement(By.id("terms")).click();
+
+    	        // click the "UploadFile" button
+    	        driver.findElement(By.name("send")).click();
        
     }
 
