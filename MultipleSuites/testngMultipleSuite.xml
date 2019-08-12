@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="1" name="Poker Suite" annotations="JDK" parallel="tests">
+         
+  <test name="PokerTexas">
+	 <classes>
+	   <class name="com.suite1.PokerTexas"/>
+	 </classes>
+   </test>
+   
+  <test name="PokerGround">
+     <classes>
+       <class name="com.suite2.PokerGround"/>
+     </classes>
+   </test>
+</suite>

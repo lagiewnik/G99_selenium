@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG:  Unit Test</title>
+<style type="text/css">
+table caption,table.info_table,table.result,table.passed,table.failed {margin-bottom:10px;border:1px solid #000099;border-collapse:collapse;empty-cells:show;}
+table.info_table td,table.info_table th,table.result td,table.result th,table.passed td,table.passed th,table.failed td,table.failed th {
+border:1px solid #000099;padding:.25em .5em .25em .5em
+}
+table.result th {vertical-align:bottom}
+tr.param th {padding-left:1em;padding-right:1em}
+tr.param td {padding-left:.5em;padding-right:2em}
+td.numi,th.numi,td.numi_attn {
+text-align:right
+}
+tr.total td {font-weight:bold}
+table caption {
+text-align:center;font-weight:bold;
+}
+table.passed tr.stripe td,table tr.passedodd td {background-color: #00AA00;}
+table.passed td,table tr.passedeven td {background-color: #33FF33;}
+table.passed tr.stripe td,table tr.skippedodd td {background-color: #cccccc;}
+table.passed td,table tr.skippedodd td {background-color: #dddddd;}
+table.failed tr.stripe td,table tr.failedodd td,table.result td.numi_attn {background-color: #FF3333;}
+table.failed td,table tr.failedeven td,table.result tr.stripe td.numi_attn {background-color: #DD0000;}
+tr.stripe td,tr.stripe th {background-color: #E6EBF9;}
+p.totop {font-size:85%;text-align:center;border-bottom:2px black solid}
+div.shootout {padding:2em;border:3px #4854A8 solid}
+</style>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">0</td><td class="numi">78,8 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="passed" id="summary">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">Default test &#8212; failed (configuration methods)</th></tr>
+<tr class="failedodd"><td rowspan="1">example.NewTest</td><td><a href="#m1"><b>launchBrowser</b>  </a></td><td class="numi">1</td><td>1565086267166</td><td class="numi">0</td></tr>
+<tr><th colspan="4">Default test &#8212; skipped (configuration methods)</th></tr>
+<tr class="skippedodd"><td rowspan="1">example.NewTest</td><td><a href="#m2"><b>terminateBrowser</b>  </a></td><td class="numi">1</td><td>1565086345912</td><td class="numi">0</td></tr>
+<tr><th colspan="4">Default test &#8212; skipped</th></tr>
+<tr class="skippedodd"><td rowspan="1">example.NewTest</td><td><a href="#m3"><b>verifyHomepageTitle</b>  </a></td><td class="numi">1</td><td>1565086345901</td><td class="numi">3</td></tr>
+</table>
+<h1>Default test</h1>
+<h2 id="m1">example.NewTest:launchBrowser</h2>
+<div style="padding-left:3em">
+<p>Failed to connect to binary FirefoxBinary(C:\Program Files (x86)\Mozilla Firefox\firefox.exe) on port 7055; process output follows: 
+:&quot;#2A2A2E&quot;,&quot;ntp_text&quot;:&quot;rgb(249, 249, 250)&quot;,&quot;popup&quot;:&quot;#4a4a4f&quot;,&quot;popup_border&quot;:&quot;#27272b&quot;,&quot;popup_text&quot;:&quot;rgb(249, 249, 250)&quot;,&quot;sidebar&quot;:&quot;#38383D&quot;,&quot;sidebar_border&quot;:&quot;rgba(255, 255, 255, 0.1)&quot;,&quot;sidebar_text&quot;:&quot;rgb(249, 249, 250)&quot;,&quot;textcolor&quot;:&quot;rgb(249, 249, 250)&quot;,&quot;tab_line&quot;:&quot;#0a84ff&quot;,&quot;toolbarColor&quot;:&quot;hsl(240, 1%, 20%)&quot;,&quot;toolbar_bottom_separator&quot;:&quot;hsl(240, 5%, 5%)&quot;,&quot;toolbar_field&quot;:&quot;rgb(71, 71, 73)&quot;,&quot;toolbar_field_border&quot;:&quot;rgba(249, 249, 250, 0.2)&quot;,&quot;toolbar_field_separator&quot;:&quot;#5F6670&quot;,&quot;toolbar_field_text&quot;:&quot;rgb(249, 249, 250)&quot;,&quot;id&quot;:&quot;default-theme@mozilla.org&quot;,&quot;version&quot;:&quot;1.0&quot;}}},&quot;firefox-compact-light@mozilla.org&quot;:{&quot;dependencies&quot;:[],&quot;enabled&quot;:false,&quot;lastModifiedTime&quot;:1563739984624,&quot;loader&quot;:null,&quot;path&quot;:null,&quot;rootURI&quot;:&quot;resource:///modules/themes/light/&quot;,&quot;runInSafeMode&quot;:true,&quot;telemetryKey&quot;:&quot;firefox-compact-light%40mozilla.org:1.0&quot;,&quot;version&quot;:&quot;1.0&quot;,&quot;type&quot;:&quot;theme&quot;},&quot;firefox-compact-dark@mozilla.org&quot;:{&quot;dependencies&quot;:[],&quot;enabled&quot;:false,&quot;lastModifiedTime&quot;:1563739984624,&quot;loader&quot;:null,&quot;path&quot;:null,&quot;rootURI&quot;:&quot;resource:///modules/themes/dark/&quot;,&quot;runInSafeMode&quot;:true,&quot;telemetryKey&quot;:&quot;firefox-compact-dark%40mozilla.org:1.0&quot;,&quot;version&quot;:&quot;1.0&quot;,&quot;type&quot;:&quot;theme&quot;},&quot;google@search.mozilla.org&quot;:{&quot;dependencies&quot;:[],&quot;enabled&quot;:true,&quot;lastModifiedTime&quot;:1563739984624,&quot;loader&quot;:null,&quot;path&quot;:null,&quot;rootURI&quot;:&quot;resource://search-extensions/google/&quot;,&quot;runInSafeMode&quot;:true,&quot;telemetryKey&quot;:&quot;google%40search.mozilla.org:1.0&quot;,&quot;version&quot;:&quot;1.0&quot;},&quot;allegro-pl@search.mozilla.org&quot;:{&quot;dependencies&quot;:[],&quot;enabled&quot;:true,&quot;lastModifiedTime&quot;:1563739984624,&quot;loader&quot;:null,&quot;path&quot;:null,&quot;rootURI&quot;:&quot;resource://search-extensions/allegro-pl/&quot;,&quot;runInSafeMode&quot;:true,&quot;telemetryKey&quot;:&quot;allegro-pl%40search.mozilla.org:1.0&quot;,&quot;version&quot;:&quot;1.0&quot;},&quot;ddg@search.mozilla.org&quot;:{&quot;dependencies&quot;:[],&quot;enabled&quot;:true,&quot;lastModifiedTime&quot;:1563739984624,&quot;loader&quot;:null,&quot;path&quot;:null,&quot;rootURI&quot;:&quot;resource://search-extensions/ddg/&quot;,&quot;runInSafeMode&quot;:true,&quot;telemetryKey&quot;:&quot;ddg%40search.mozilla.org:1.0&quot;,&quot;version&quot;:&quot;1.0&quot;},&quot;pwn-pl@search.mozilla.org&quot;:{&quot;dependencies&quot;:[],&quot;enabled&quot;:true,&quot;lastModifiedTime&quot;:1563739984624,&quot;loader&quot;:null,&quot;path&quot;:null,&quot;rootURI&quot;:&quot;resource://search-extensions/pwn-pl/&quot;,&quot;runInSafeMode&quot;:true,&quot;telemetryKey&quot;:&quot;pwn-pl%40search.mozilla.org:1.0&quot;,&quot;version&quot;:&quot;1.0&quot;},&quot;wikipedia@search.mozilla.org&quot;:{&quot;dependencies&quot;:[],&quot;enabled&quot;:true,&quot;lastModifiedTime&quot;:1563739984624,&quot;loader&quot;:null,&quot;path&quot;:null,&quot;rootURI&quot;:&quot;resource://search-extensions/wikipedia/&quot;,&quot;runInSafeMode&quot;:true,&quot;telemetryKey&quot;:&quot;wikipedia%40search.mozilla.org:1.0&quot;,&quot;version&quot;:&quot;1.0&quot;}},&quot;staged&quot;:{}}: null
+1565086284729	addons.xpi	DEBUG	Updating XPIState for {&quot;id&quot;:&quot;wolnelektury-pl@search.mozilla.org&quot;,&quot;syncGUID&quot;:&quot;{9c8992a5-d155-4db4-8d4b-89cc2e25c872}&quot;,&quot;version&quot;:&quot;1.0&quot;,&quot;type&quot;:&quot;extension&quot;,&quot;loader&quot;:null,&quot;updateURL&quot;:null,&quot;optionsURL&quot;:null,&quot;optionsType&quot;:null,&quot;optionsBrowserStyle&quot;:true,&quot;aboutURL&quot;:null,&quot;defaultLocale&quot;:{&quot;name&quot;:&quot;Wolne Lektury&quot;,&quot;description&quot;:&quot;Biblioteka internetowa WolneLektury.pl&quot;,&quot;creator&quot;:null,&quot;developers&quot;:null,&quot;translators&quot;:null,&quot;contributors&quot;:null},&quot;visible&quot;:true,&quot;active&quot;:true,&quot;userDisabled&quot;:false,&quot;appDisabled&quot;:false,&quot;installDate&quot;:1565086284727,&quot;applyBackgroundUpdates&quot;:1,&quot;path&quot;:null,&quot;skinnable&quot;:false,&quot;sourceURI&quot;:null,&quot;releaseNotesURI&quot;:null,&quot;softDisabled&quot;:false,&quot;foreignInstall&quot;:false,&quot;strictCompatibility&quot;:true,&quot;locales&quot;:[],&quot;targetApplications&quot;:[{&quot;id&quot;:&quot;toolkit@mozilla.org&quot;,&quot;minVersion&quot;:null,&quot;maxVersion&quot;:null}],&quot;targetPlatforms&quot;:[],&quot;seen&quot;:true,&quot;dependencies&quot;:[],&quot;incognito&quot;:&quot;spanning&quot;,&quot;userPermissions&quot;:{&quot;permissions&quot;:[],&quot;origins&quot;:[]},&quot;icons&quot;:{&quot;16&quot;:&quot;favicon.png&quot;},&quot;iconURL&quot;:null,&quot;blocklistState&quot;:0,&quot;blocklistURL&quot;:null,&quot;startupData&quot;:null,&quot;hidden&quot;:true,&quot;installTelemetryInfo&quot;:null,&quot;recommendationState&quot;:null,&quot;rootURI&quot;:&quot;resource://search-extensions/wolnelektury-pl/&quot;,&quot;location&quot;:&quot;app-builtin&quot;}
+1565086284732	addons.xpi	DEBUG	Loading bootstrap scope from resource://search-extensions/wolnelektury-pl/
+1565086284732	addons.xpi	DEBUG	Calling bootstrap method install on wolnelektury-pl@search.mozilla.org version 1.0
+1565086284733	addons.xpi	DEBUG	Calling bootstrap method startup on wolnelektury-pl@search.mozilla.org version 1.0
+1565086285090	addons.manager	DEBUG	Registering upgrade listener for formautofill@mozilla.org
+
+Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;
+System info: host: &apos;mslaptop&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
+Driver info: driver.version: FirefoxDriver</p>
+org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:130)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.startClient(FirefoxDriver.java:246)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:114)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:191)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:186)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:103)
+<br/>at example.NewTest.launchBrowser(NewTest.java:20)
+<br/>23 lines not shown
+<p>Caused by Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
+:&quot;#2A2A2E&quot;,&quot;ntp_text&quot;:&quot;rgb(249, 249, 250)&quot;,&quot;popup&quot;:&quot;#4a4a4f&quot;,&quot;popup_border&quot;:&quot;#27272b&quot;,&quot;popup_text&quot;:&quot;rgb(249, 249, 250)&quot;,&quot;sidebar&quot;:&quot;#38383D&quot;,&quot;sidebar_border&quot;:&quot;rgba(255, 255, 255, 0.1)&quot;,&quot;sidebar_text&quot;:&quot;rgb(249, 249, 250)&quot;,&quot;textcolor&quot;:&quot;rgb(249, 249, 250)&quot;,&quot;tab_line&quot;:&quot;#0a84ff&quot;,&quot;toolbarColor&quot;:&quot;hsl(240, 1%, 20%)&quot;,&quot;toolbar_bottom_separator&quot;:&quot;hsl(240, 5%, 5%)&quot;,&quot;toolbar_field&quot;:&quot;rgb(71, 71, 73)&quot;,&quot;toolbar_field_border&quot;:&quot;rgba(249, 249, 250, 0.2)&quot;,&quot;toolbar_field_separator&quot;:&quot;#5F6670&quot;,&quot;toolbar_field_text&quot;:&quot;rgb(249, 249, 250)&quot;,&quot;id&quot;:&quot;default-theme@mozilla.org&quot;,&quot;version&quot;:&quot;1.0&quot;}}},&quot;firefox-compact-light@mozilla.org&quot;:{&quot;dependencies&quot;:[],&quot;enabled&quot;:false,&quot;lastModifiedTime&quot;:1563739984624,&quot;loader&quot;:null,&quot;path&quot;:null,&quot;rootURI&quot;:&quot;resource:///modules/themes/light/&quot;,&quot;runInSafeMode&quot;:true,&quot;telemetryKey&quot;:&quot;firefox-compact-light%40mozilla.org:1.0&quot;,&quot;version&quot;:&quot;1.0&quot;,&quot;type&quot;:&quot;theme&quot;},&quot;firefox-compact-dark@mozilla.org&quot;:{&quot;dependencies&quot;:[],&quot;enabled&quot;:false,&quot;lastModifiedTime&quot;:1563739984624,&quot;loader&quot;:null,&quot;path&quot;:null,&quot;rootURI&quot;:&quot;resource:///modules/themes/dark/&quot;,&quot;runInSafeMode&quot;:true,&quot;telemetryKey&quot;:&quot;firefox-compact-dark%40mozilla.org:1.0&quot;,&quot;version&quot;:&quot;1.0&quot;,&quot;type&quot;:&quot;theme&quot;},&quot;google@search.mozilla.org&quot;:{&quot;dependencies&quot;:[],&quot;enabled&quot;:true,&quot;lastModifiedTime&quot;:1563739984624,&quot;loader&quot;:null,&quot;path&quot;:null,&quot;rootURI&quot;:&quot;resource://search-extensions/google/&quot;,&quot;runInSafeMode&quot;:true,&quot;telemetryKey&quot;:&quot;google%40search.mozilla.org:1.0&quot;,&quot;version&quot;:&quot;1.0&quot;},&quot;allegro-pl@search.mozilla.org&quot;:{&quot;dependencies&quot;:[],&quot;enabled&quot;:true,&quot;lastModifiedTime&quot;:1563739984624,&quot;loader&quot;:null,&quot;path&quot;:null,&quot;rootURI&quot;:&quot;resource://search-extensions/allegro-pl/&quot;,&quot;runInSafeMode&quot;:true,&quot;telemetryKey&quot;:&quot;allegro-pl%40search.mozilla.org:1.0&quot;,&quot;version&quot;:&quot;1.0&quot;},&quot;ddg@search.mozilla.org&quot;:{&quot;dependencies&quot;:[],&quot;enabled&quot;:true,&quot;lastModifiedTime&quot;:1563739984624,&quot;loader&quot;:null,&quot;path&quot;:null,&quot;rootURI&quot;:&quot;resource://search-extensions/ddg/&quot;,&quot;runInSafeMode&quot;:true,&quot;telemetryKey&quot;:&quot;ddg%40search.mozilla.org:1.0&quot;,&quot;version&quot;:&quot;1.0&quot;},&quot;pwn-pl@search.mozilla.org&quot;:{&quot;dependencies&quot;:[],&quot;enabled&quot;:true,&quot;lastModifiedTime&quot;:1563739984624,&quot;loader&quot;:null,&quot;path&quot;:null,&quot;rootURI&quot;:&quot;resource://search-extensions/pwn-pl/&quot;,&quot;runInSafeMode&quot;:true,&quot;telemetryKey&quot;:&quot;pwn-pl%40search.mozilla.org:1.0&quot;,&quot;version&quot;:&quot;1.0&quot;},&quot;wikipedia@search.mozilla.org&quot;:{&quot;dependencies&quot;:[],&quot;enabled&quot;:true,&quot;lastModifiedTime&quot;:1563739984624,&quot;loader&quot;:null,&quot;path&quot;:null,&quot;rootURI&quot;:&quot;resource://search-extensions/wikipedia/&quot;,&quot;runInSafeMode&quot;:true,&quot;telemetryKey&quot;:&quot;wikipedia%40search.mozilla.org:1.0&quot;,&quot;version&quot;:&quot;1.0&quot;}},&quot;staged&quot;:{}}: null
+1565086284729	addons.xpi	DEBUG	Updating XPIState for {&quot;id&quot;:&quot;wolnelektury-pl@search.mozilla.org&quot;,&quot;syncGUID&quot;:&quot;{9c8992a5-d155-4db4-8d4b-89cc2e25c872}&quot;,&quot;version&quot;:&quot;1.0&quot;,&quot;type&quot;:&quot;extension&quot;,&quot;loader&quot;:null,&quot;updateURL&quot;:null,&quot;optionsURL&quot;:null,&quot;optionsType&quot;:null,&quot;optionsBrowserStyle&quot;:true,&quot;aboutURL&quot;:null,&quot;defaultLocale&quot;:{&quot;name&quot;:&quot;Wolne Lektury&quot;,&quot;description&quot;:&quot;Biblioteka internetowa WolneLektury.pl&quot;,&quot;creator&quot;:null,&quot;developers&quot;:null,&quot;translators&quot;:null,&quot;contributors&quot;:null},&quot;visible&quot;:true,&quot;active&quot;:true,&quot;userDisabled&quot;:false,&quot;appDisabled&quot;:false,&quot;installDate&quot;:1565086284727,&quot;applyBackgroundUpdates&quot;:1,&quot;path&quot;:null,&quot;skinnable&quot;:false,&quot;sourceURI&quot;:null,&quot;releaseNotesURI&quot;:null,&quot;softDisabled&quot;:false,&quot;foreignInstall&quot;:false,&quot;strictCompatibility&quot;:true,&quot;locales&quot;:[],&quot;targetApplications&quot;:[{&quot;id&quot;:&quot;toolkit@mozilla.org&quot;,&quot;minVersion&quot;:null,&quot;maxVersion&quot;:null}],&quot;targetPlatforms&quot;:[],&quot;seen&quot;:true,&quot;dependencies&quot;:[],&quot;incognito&quot;:&quot;spanning&quot;,&quot;userPermissions&quot;:{&quot;permissions&quot;:[],&quot;origins&quot;:[]},&quot;icons&quot;:{&quot;16&quot;:&quot;favicon.png&quot;},&quot;iconURL&quot;:null,&quot;blocklistState&quot;:0,&quot;blocklistURL&quot;:null,&quot;startupData&quot;:null,&quot;hidden&quot;:true,&quot;installTelemetryInfo&quot;:null,&quot;recommendationState&quot;:null,&quot;rootURI&quot;:&quot;resource://search-extensions/wolnelektury-pl/&quot;,&quot;location&quot;:&quot;app-builtin&quot;}
+1565086284732	addons.xpi	DEBUG	Loading bootstrap scope from resource://search-extensions/wolnelektury-pl/
+1565086284732	addons.xpi	DEBUG	Calling bootstrap method install on wolnelektury-pl@search.mozilla.org version 1.0
+1565086284733	addons.xpi	DEBUG	Calling bootstrap method startup on wolnelektury-pl@search.mozilla.org version 1.0
+1565086285090	addons.manager	DEBUG	Registering upgrade listener for formautofill@mozilla.org
+</p>
+org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:118)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.startClient(FirefoxDriver.java:246)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:114)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:191)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:186)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:103)
+<br/>at example.NewTest.launchBrowser(NewTest.java:20)
+<br/>23 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">example.NewTest:terminateBrowser</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">example.NewTest:verifyHomepageTitle</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>
