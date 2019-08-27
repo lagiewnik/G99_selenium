@@ -1,0 +1,144 @@
+package test;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
+import org.testng.ITestContext;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import pages.GoogleSearchParameters;
+
+
+
+public class TestGoogleSearchParamersByITestContextDataProvider {
+		WebDriver driver;
+		GoogleSearchParameters objSearch;
+
+		
+		String driverPath = "C:\\selenium_web_driver\\geckodriver.exe";
+		String textSearch = "poker texas";
+		
+		@BeforeTest(groups={"A","B"})
+		public void setup(){
+		
+			System.setProperty("webdriver.gecko.driver", driverPath);
+	        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+	        capabilities.setCapability("marionette", true);
+	        driver = new FirefoxDriver(capabilities);
+	        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		    driver.get("https://google.pl");
+		
+		}
+
+	    /**
+
+	     * This test case will login in http://demo.guru99.com/V4/
+
+	     * Verify login page title as guru99 bank
+
+	     * Login to application
+
+	     * Verify the home page using Dashboard message
+	     * @throws InterruptedException 
+
+	     */
+		/** Test case to verify google search box
+	     * @param author
+	     * @param searchKey
+	     * @throws InterruptedException
+	     */
+		
+		@Test(dataProvider="SearchProvider",groups="A")
+		 public void testMethodA( @Optional("Abc") String author,String searchKey) throws InterruptedException {
+			 //Create Login Page object
+			objSearch = new GoogleSearchParameters(driver);
+			
+			//put text in search  field
+			objSearch.setSearchText(searchKey);
+			/*
+			List<WebElement> lstGoogle = driver.findElement(By.xpath("//ul[@role='listbox']"))
+					.findElements(By.xpath("//li[@role='presentation']"));
+						for (int i = 0; i < lstGoogle.size(); i++) {
+							System.out.println(lstGoogle.get(i).getText());
+						}
+			*/
+			//get first sugestion of search:
+			Thread.sleep(5000);
+			String firstSugestionText = objSearch.getFirstSugestion();
+			
+			// verify that first sugestion is equal search text:
+			System.out.println("Welcome ->"+author+" Your search key is->"+searchKey);
+            System.out.println("Thread will sleep now");
+            
+            Thread.sleep(3000);
+            System.out.println("First sugestion Value in Google Search Box = "+ firstSugestionText +" ::: Value given by input = "+searchKey);
+			Assert.assertTrue(firstSugestionText.toLowerCase().contains(searchKey));
+			
+		}
+		
+		@Test(dataProvider="SearchProvider",groups="B")
+		 public void test_SugestionGoogle( @Optional("Abc") String searchKey) throws InterruptedException {
+			 //Create Login Page object
+			objSearch = new GoogleSearchParameters(driver);
+			
+			//put text in search  field
+			objSearch.setSearchText(searchKey);
+			
+			//get first sugestion of search:
+			Thread.sleep(3000);
+			String firstSugestionText = objSearch.getFirstSugestion();
+			
+			// verify that first sugestion is equal search text:
+			System.out.println("Welcome unknown user-> Your search key is->"+searchKey);
+           System.out.println("Thread will sleep now");
+           
+           Thread.sleep(3000);
+           System.out.println("First sugestion Value in Google Search Box = "+ firstSugestionText +" ::: Value given by input = "+searchKey);
+			Assert.assertTrue(firstSugestionText.toLowerCase().contains(searchKey));
+			
+		}
+		
+		@AfterTest(enabled=true)
+		public void closeBrowser() {
+			driver.quit();
+		}
+		
+		@DataProvider(name="SearchProvider")
+		public Object[][] getDataFromDataprovider(ITestContext c){
+		Object[][] groupArray = null;
+		//	Object[][] groupArray = new Object[0][0];
+			for (String group : c.getIncludedGroups()) {
+			if(group.equalsIgnoreCase("A")){
+				groupArray = new Object[][] { 
+						{ "Guru99", "India" }, 
+						{ "Krishna", "UK" }, 
+						{ "Bhupesh", "USA" } 
+					};
+			break;	
+			}
+				else if(group.equalsIgnoreCase("B"))
+				{
+				groupArray = new Object[][] { 
+							{  "Canada" }, 
+							{  "Russia" }, 
+							{  "Japan" } 
+						};
+				}
+			break;
+		}
+		return groupArray;		
+		}
+		
+}

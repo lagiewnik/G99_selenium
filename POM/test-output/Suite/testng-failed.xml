@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="author1" value="ziomalu"/>
+  <parameter name="searchKey" value="textar"/>
+  <test thread-count="5" name="TestGoogleWithParameters(failed)">
+    <parameter name="searchKey" value="postrzelony"/>
+    <classes>
+      <class name="test.TestGoogleSearchWithParameters">
+        <methods>
+          <include name="test_SugestionGoogle" invocation-numbers="0"/>
+          <include name="setup"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- test.TestGoogleSearchWithParameters -->
+    </classes>
+  </test> <!-- TestGoogleWithParameters(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -5,7 +5,7 @@
     <classes>
       <class name="firsttestngpackage.MultipleSession_In_testNG">
         <methods>
-          <include name="executSessionThree"/>
+          <include name="executeSessionTwo"/>
           <include name="executSessionOne"/>
         </methods>
       </class> <!-- firsttestngpackage.MultipleSession_In_testNG -->

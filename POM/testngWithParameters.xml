@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<parameter name="author1" value="ziomalu"/>
+<parameter name="searchKey" value="textar"/>
+  <test thread-count="5" name="TestGoogleWithParameters">
+  <parameter name="searchKey" value="postrzelony"/>
+    <classes>
+      <class name="test.TestGoogleSearchWithParameters"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
